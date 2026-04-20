@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Your Trip — Wanderlusters Travel Team</title>
+  <meta name="description" content="Tell us about your dream trip. Wanderlusters Travel Team will craft a personalized itinerary just for you." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Wanderlusters Home">
+        <img src="assets/logo.jpeg" alt="Wanderlusters Travel Team" />
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="destinations.html" role="menuitem">Destinations</a>
+        <a href="plan.html" class="btn btn-primary" role="menuitem">Plan Your Trip</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="contact.html">Contact</a>
+    <a href="plan.html" class="btn btn-primary">Plan Your Trip</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero hero-sm" aria-label="Page hero">
+    <!-- Replace with your own photo -->
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80');"></div>
+    <div class="hero-content">
+      <span class="section-label">Free Trip Inquiry</span>
+      <h1>Let's Plan Your<br>Perfect Trip</h1>
+      <p>Tell us a little about what you're dreaming of and one of our travel advisors will be in touch within 1–2 business days.</p>
+    </div>
+  </section>
+
+  <!-- ═══ PLAN LAYOUT ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="plan-layout">
+
+        <!-- Sidebar -->
+        <aside class="plan-sidebar fade-up">
+          <span class="section-label">What To Expect</span>
+          <h3>We'll Take It<br>From Here</h3>
+          <div class="divider"></div>
+          <p>Once you submit your inquiry, a real person on our team reviews every detail — no bots, no auto-replies.</p>
+
+          <div class="plan-checklist">
+            <div class="plan-check-item">
+              <div class="plan-check-icon">✓</div>
+              <span class="plan-check-text">Personal review of your inquiry within 1–2 business days</span>
+            </div>
+            <div class="plan-check-item">
+              <div class="plan-check-icon">✓</div>
+              <span class="plan-check-text">A consultation call or email to dive deeper into your vision</span>
+            </div>
+            <div class="plan-check-item">
+              <div class="plan-check-icon">✓</div>
+              <span class="plan-check-text">A fully customized itinerary built around your style and budget</span>
+            </div>
+            <div class="plan-check-item">
+              <div class="plan-check-icon">✓</div>
+              <span class="plan-check-text">Ongoing support from advisor to landing to arrival back home</span>
+            </div>
+            <div class="plan-check-item">
+              <div class="plan-check-icon">✓</div>
+              <span class="plan-check-text">Zero pressure — it's free to inquire, no commitment required</span>
+            </div>
+          </div>
+
+          <div style="margin-top:36px; padding:24px; background:rgba(74,137,137,0.08); border-radius:var(--radius-md); border-left:3px solid var(--teal);">
+            <p style="font-size:0.88rem; color:var(--text); font-style:italic; line-height:1.7;">"We filled out the form on a Tuesday and by Thursday had a full itinerary for our Italy trip in our inbox. Absolutely blown away."</p>
+            <p style="font-size:0.78rem; font-weight:700; color:var(--teal); margin-top:10px;">— Sarah M., Stillwater OK</p>
+          </div>
+        </aside>
+
+        <!-- Inquiry Form -->
+        <div class="form-card fade-up delay-2">
+          <h3>Trip Planning Questionnaire</h3>
+          <p class="subtitle">We're here to design a trip that's uniquely yours. Answer a few quick questions and we'll be in touch to start building your adventure.</p>
+
+          <div class="form-success" id="plan-success" style="display:none; background:#d4edda; border:1px solid #c3e6cb; border-radius:10px; padding:24px 28px; text-align:center; color:#155724; font-size:1rem; line-height:1.6; margin-bottom:24px;">
+            <div style="font-size:2rem; margin-bottom:10px;">✈️</div>
+            <strong>Questionnaire received!</strong><br>
+            Thanks so much — we'll be in touch within 1–2 business days to start planning your adventure.
+          </div>
+
+          <form
+            name="trip-inquiry"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="plan.html?success=true"
+          >
+            <input type="hidden" name="form-name" value="trip-inquiry" />
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="form-grid">
+
+              <!-- Q1 Name -->
+              <div class="form-group full">
+                <label for="name">1. What is your name? *</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+              </div>
+
+              <!-- Q2 Email -->
+              <div class="form-group">
+                <label for="email">2. Email? *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+
+              <!-- Q3 Phone -->
+              <div class="form-group">
+                <label for="phone">3. Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+              </div>
+
+              <!-- Q4 Region -->
+              <div class="form-group full">
+                <label>4. 🌍 Where would you like to travel? * <span class="form-hint">Check all that apply</span></label>
+                <div class="checkbox-group checkbox-group--stacked">
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="North America" /><span>North America</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="South America" /><span>South America</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Central America" /><span>Central America</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Europe" /><span>Europe</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Africa" /><span>Africa</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Asia" /><span>Asia</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Australia / Oceania" /><span>Australia / Oceania</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="United Kingdom / Ireland" /><span>United Kingdom / Ireland</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Caribbean Islands" /><span>Caribbean Islands</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="region" value="Other" /><span>Other</span></label>
+                </div>
+              </div>
+
+              <!-- Q5 Specific destination -->
+              <div class="form-group full">
+                <label for="specific_dest">5. Do you have a specific country or countries in mind? Or maybe a specific event or activity? *</label>
+                <input type="text" id="specific_dest" name="specific_destination" placeholder="e.g. Italy, Cancún, a European river cruise, a honeymoon — or 'open to ideas!'" required />
+              </div>
+
+              <!-- Q6 Travel dates -->
+              <div class="form-group full">
+                <label for="travel_when">6. 📅 When are you wanting to travel? *</label>
+                <input type="text" id="travel_when" name="travel_when" placeholder="e.g. June 2026, Summer 2026, flexible / not sure yet" required />
+              </div>
+
+              <!-- Q7 Group size -->
+              <div class="form-group full">
+                <label>7. 👥 How many people are traveling? *</label>
+                <div class="radio-group">
+                  <label class="radio-label"><input type="radio" name="group_size" value="1" required /><span>1</span></label>
+                  <label class="radio-label"><input type="radio" name="group_size" value="2" /><span>2</span></label>
+                  <label class="radio-label"><input type="radio" name="group_size" value="3–4" /><span>3–4</span></label>
+                  <label class="radio-label"><input type="radio" name="group_size" value="5–7" /><span>5–7</span></label>
+                  <label class="radio-label"><input type="radio" name="group_size" value="8 or more" /><span>8 or more</span></label>
+                </div>
+              </div>
+
+              <!-- Q8 Trip pace -->
+              <div class="form-group full">
+                <label>8. 🏖️ What type of trip pace do you prefer? *</label>
+                <div class="radio-group radio-group--stacked">
+                  <label class="radio-label"><input type="radio" name="trip_pace" value="Relaxing (beach, pool, downtime)" required /><span>Relaxing — beach, pool, downtime</span></label>
+                  <label class="radio-label"><input type="radio" name="trip_pace" value="Balanced (mix of relaxation + sightseeing)" /><span>Balanced — mix of relaxation &amp; sightseeing</span></label>
+                  <label class="radio-label"><input type="radio" name="trip_pace" value="Active (see and do as much as possible)" /><span>Active — see and do as much as possible</span></label>
+                </div>
+              </div>
+
+              <!-- Q9 Priorities -->
+              <div class="form-group full">
+                <label>9. ⭐ What's most important to you on this trip? * <span class="form-hint">Choose up to 2</span></label>
+                <div class="checkbox-group checkbox-group--stacked">
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Relaxation & downtime" /><span>Relaxation &amp; downtime</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Sightseeing & culture" /><span>Sightseeing &amp; culture</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Food & dining experiences" /><span>Food &amp; dining experiences</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Adventure & outdoor activities" /><span>Adventure &amp; outdoor activities</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Family fun / kid-friendly activities" /><span>Family fun / kid-friendly activities</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Romance & special occasion" /><span>Romance &amp; special occasion</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="priorities" value="Other" /><span>Other</span></label>
+                </div>
+              </div>
+
+              <!-- Q10 How to help -->
+              <div class="form-group full">
+                <label>10. How would you like our help? * <span class="form-hint">Check all that apply</span></label>
+                <div class="checkbox-group checkbox-group--stacked">
+                  <label class="checkbox-label"><input type="checkbox" name="help_type" value="Ideas and creating an itinerary" /><span>Ideas and creating an itinerary</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="help_type" value="Flights/cruises" /><span>Flights / cruises</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="help_type" value="Plan and book the trip" /><span>Plan and book the trip (with your input &amp; approval along the way)</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="help_type" value="Complete support" /><span>Complete support — planning process &amp; during the trip</span></label>
+                  <label class="checkbox-label"><input type="checkbox" name="help_type" value="Other" /><span>Other</span></label>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-group full form-submit">
+                <button type="submit" class="btn btn-primary">Send My Questionnaire ✈️</button>
+                <p style="font-size:0.78rem; text-align:center; margin-top:12px; color:var(--muted);">
+                  By submitting, you agree to be contacted by Wanderlusters Travel Team at the email or phone number provided.
+                </p>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.jpeg" alt="Wanderlusters Travel Team" class="footer-logo" />
+          <p>Expert travel planning and advisory services for every kind of adventure. Based in Stillwater, Oklahoma.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="social-icon" aria-label="Facebook">👤</a>
+            <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="plan.html">Plan Your Trip</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Beach &amp; Islands</a></li>
+            <li><a href="destinations.html">Adventure Travel</a></li>
+            <li><a href="destinations.html">City Escapes</a></li>
+            <li><a href="destinations.html">Cultural Tours</a></li>
+            <li><a href="destinations.html">Family Travel</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:wanderlusterstravelteam@gmail.com">wanderlusterstravelteam<br>@gmail.com</a></li>
+            <li><a href="contact.html">Stillwater, Oklahoma</a></li>
+            <li><a href="plan.html">Get a Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Wanderlusters Travel Team. All rights reserved.</span>
+        <span>Designed with ❤️ in Stillwater, OK</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

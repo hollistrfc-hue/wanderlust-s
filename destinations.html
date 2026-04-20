@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations — Wanderlusters Travel Team</title>
+  <meta name="description" content="Explore trending travel destinations around the world. Let Wanderlusters plan your perfect trip." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Wanderlusters Home">
+        <img src="assets/logo.jpeg" alt="Wanderlusters Travel Team" />
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="destinations.html" role="menuitem">Destinations</a>
+        <a href="plan.html" class="btn btn-primary" role="menuitem">Plan Your Trip</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" role="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="contact.html">Contact</a>
+    <a href="plan.html" class="btn btn-primary">Plan Your Trip</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero hero-sm" aria-label="Page hero">
+    <!-- Replace with your own photo -->
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=80');"></div>
+    <div class="hero-content">
+      <span class="section-label">The World Awaits</span>
+      <h1>Explore Every<br>Corner of the Globe</h1>
+      <p>From turquoise coastlines to ancient mountain kingdoms — wherever you want to go, we'll get you there in style.</p>
+    </div>
+  </section>
+
+  <!-- ═══ DESTINATIONS GRID ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading fade-up">
+        <span class="section-label">Browse by Category</span>
+        <h2>Find Your Next Adventure</h2>
+        <div class="divider"></div>
+        <p>Don't see your dream destination? <a href="plan.html" style="color: var(--teal); font-weight: 600;">Tell us where you want to go</a> — we plan trips to anywhere in the world.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar fade-up" role="group" aria-label="Filter destinations">
+        <button class="filter-btn active" data-filter="all">All Destinations</button>
+        <button class="filter-btn" data-filter="beach">🏖️ Beach &amp; Islands</button>
+        <button class="filter-btn" data-filter="adventure">🏔️ Adventure</button>
+        <button class="filter-btn" data-filter="city">🏙️ City Escapes</button>
+        <button class="filter-btn" data-filter="cultural">🏛️ Cultural</button>
+        <button class="filter-btn" data-filter="luxury">💎 Luxury</button>
+      </div>
+
+      <!-- Destination Cards -->
+      <div class="card-grid" id="dest-grid">
+
+        <article class="dest-card dest-item fade-up delay-1" data-category="beach">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80" alt="Santorini, Greece" loading="lazy" />
+            <span class="dest-card-badge">🔥 Trending</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Santorini, Greece</h3>
+            <p>White-washed cliffs, cobalt-blue domes, volcanic beaches, and the most breathtaking sunsets in the Mediterranean.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Beach &amp; Luxury</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-2" data-category="beach">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800&q=80" alt="Maldives" loading="lazy" />
+            <span class="dest-card-badge">💎 Luxury</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>The Maldives</h3>
+            <p>Overwater bungalows, bioluminescent lagoons, and some of the clearest water on the planet. Pure paradise.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Beach &amp; Luxury</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-3" data-category="adventure">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80" alt="Machu Picchu, Peru" loading="lazy" />
+            <span class="dest-card-badge">🏔️ Bucket List</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Machu Picchu, Peru</h3>
+            <p>Hike the Inca Trail to one of the world's most awe-inspiring ancient citadels, high in the Andes Mountains.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Adventure &amp; History</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-1" data-category="cultural">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Bali, Indonesia" loading="lazy" />
+            <span class="dest-card-badge">✨ Popular</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Bali, Indonesia</h3>
+            <p>Ancient temples, terraced rice fields, surf breaks, spiritual retreats, and a culture that will stay with you forever.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Cultural &amp; Adventure</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-2" data-category="city">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=80" alt="Paris, France" loading="lazy" />
+            <span class="dest-card-badge">🗼 Classic</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Paris, France</h3>
+            <p>The City of Light — Eiffel Tower evenings, world-class museums, legendary cuisine, and unmatched romantic charm.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">City &amp; Culture</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-3" data-category="city">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Tokyo, Japan" loading="lazy" />
+            <span class="dest-card-badge">🌸 Trending</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Tokyo, Japan</h3>
+            <p>Futuristic skylines meeting ancient shrines — Tokyo is endlessly fascinating, delicious, and utterly unforgettable.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">City &amp; Culture</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-1" data-category="adventure">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80" alt="Iceland" loading="lazy" />
+            <span class="dest-card-badge">🌌 Unique</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Iceland</h3>
+            <p>Northern lights, volcanic hot springs, midnight sun, glacier hikes, and dramatic black-sand beaches. Nature at its wildest.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Adventure &amp; Nature</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-2" data-category="luxury">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Amalfi Coast, Italy" loading="lazy" />
+            <span class="dest-card-badge">💎 Luxury</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Amalfi Coast, Italy</h3>
+            <p>Clifftop villages draped in bougainvillea, turquoise coves, fresh seafood, and Italian luxury at every turn.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Luxury &amp; Beach</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-3" data-category="adventure">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80" alt="Safari, Africa" loading="lazy" />
+            <span class="dest-card-badge">🦁 Adventure</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Safari — East Africa</h3>
+            <p>Witness the Great Migration, track the Big Five, and fall asleep under a blanket of stars in the Serengeti.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Adventure &amp; Wildlife</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-1" data-category="beach">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=800&q=80" alt="Thailand" loading="lazy" />
+            <span class="dest-card-badge">🌴 Popular</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Thailand</h3>
+            <p>From Bangkok's vibrant streets to Phuket's emerald bays and the jungle temples of Chiang Mai — endlessly rewarding.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Beach &amp; Culture</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-2" data-category="cultural">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80" alt="Morocco" loading="lazy" />
+            <span class="dest-card-badge">🕌 Cultural</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>Morocco</h3>
+            <p>Ancient medinas, colorful souks, Sahara desert camps, and a sensory experience unlike anywhere else in the world.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Cultural &amp; Adventure</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card dest-item fade-up delay-3" data-category="adventure">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="New Zealand" loading="lazy" />
+            <span class="dest-card-badge">🏞️ Stunning</span>
+          </div>
+          <div class="dest-card-body">
+            <h3>New Zealand</h3>
+            <p>Fjords, mountains, glowworm caves, Māori culture, and adventure sports capital of the world. Middle Earth in real life.</p>
+            <div class="dest-card-footer">
+              <span class="dest-tag">Adventure &amp; Nature</span>
+              <a href="plan.html">Plan this trip →</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /card-grid -->
+
+      <!-- Custom destination callout -->
+      <div class="fade-up" style="margin-top:64px; text-align:center; padding:52px 40px; background:var(--white); border-radius:var(--radius-lg); border:1.5px dashed rgba(74,137,137,0.3);">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🗺️</div>
+        <h3 style="font-size:1.8rem;margin-bottom:12px;">Don't See Your Destination?</h3>
+        <p style="max-width:500px;margin:0 auto 28px;">We plan trips to every corner of the world. Tell us your dream destination and we'll make it happen.</p>
+        <a href="plan.html" class="btn btn-green">Tell Us Where You Want to Go</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="section-label" style="color: var(--light-teal);">Let's Build It</span>
+      <h2>Your Perfect Itinerary<br>Is One Form Away</h2>
+      <p>Pick your destination. Tell us your style. We'll handle everything else.</p>
+      <a href="plan.html" class="btn btn-primary">Start My Trip Inquiry</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.jpeg" alt="Wanderlusters Travel Team" class="footer-logo" />
+          <p>Expert travel planning and advisory services for every kind of adventure. Based in Stillwater, Oklahoma.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+            <a href="#" class="social-icon" aria-label="Facebook">👤</a>
+            <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="plan.html">Plan Your Trip</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html">Beach &amp; Islands</a></li>
+            <li><a href="destinations.html">Adventure Travel</a></li>
+            <li><a href="destinations.html">City Escapes</a></li>
+            <li><a href="destinations.html">Cultural Tours</a></li>
+            <li><a href="destinations.html">Family Travel</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:wanderlusterstravelteam@gmail.com">wanderlusterstravelteam<br>@gmail.com</a></li>
+            <li><a href="contact.html">Stillwater, Oklahoma</a></li>
+            <li><a href="plan.html">Get a Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Wanderlusters Travel Team. All rights reserved.</span>
+        <span>Designed with ❤️ in Stillwater, OK</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
