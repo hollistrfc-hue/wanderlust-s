@@ -85,13 +85,40 @@
     });
   }
 
-  /* ── Netlify form success message (shows after redirect back with ?success=true) ── */
+  /* ── Netlify plan form success (redirect with ?success=true) ── */
   if (window.location.search.includes('success=true')) {
-    const successEl = document.getElementById('plan-success') || document.getElementById('contact-success');
-    if (successEl) {
-      successEl.style.display = 'block';
-      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const planSuccess = document.getElementById('plan-success');
+    if (planSuccess) {
+      planSuccess.style.display = 'block';
+      planSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+  }
+
+  /* ── Contact form: in-page thank-you on submit ── */
+  const contactForm = document.querySelector('form[name="contact"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm)).toString()
+      }).then(function () {
+        const card = contactForm.closest('.contact-form-card');
+        if (card) {
+          const heading = card.querySelector('h3');
+          if (heading) heading.style.display = 'none';
+        }
+        contactForm.style.display = 'none';
+        const successEl = document.getElementById('contact-success');
+        if (successEl) {
+          successEl.style.display = 'flex';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }).catch(function () {
+        contactForm.submit();
+      });
+    });
   }
 
 })();
