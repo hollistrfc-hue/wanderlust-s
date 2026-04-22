@@ -94,31 +94,36 @@
     }
   }
 
-  /* ── Contact form: in-page thank-you on submit ── */
-  const contactForm = document.querySelector('form[name="contact"]');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+  /* ── In-page thank-you handler (used by contact + plan forms) ── */
+  function attachInPageSuccess(formSelector, cardSelector, successId) {
+    var form = document.querySelector(formSelector);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(contactForm)).toString()
+        body: new URLSearchParams(new FormData(form)).toString()
       }).then(function () {
-        const card = contactForm.closest('.contact-form-card');
+        var card = form.closest(cardSelector);
         if (card) {
-          const heading = card.querySelector('h3');
-          if (heading) heading.style.display = 'none';
+          card.querySelectorAll('h3, p.subtitle, form').forEach(function (el) {
+            el.style.display = 'none';
+          });
         }
-        contactForm.style.display = 'none';
-        const successEl = document.getElementById('contact-success');
+        form.style.display = 'none';
+        var successEl = document.getElementById(successId);
         if (successEl) {
           successEl.style.display = 'flex';
           successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }).catch(function () {
-        contactForm.submit();
+        form.submit();
       });
     });
   }
+
+  attachInPageSuccess('form[name="contact"]',      '.contact-form-card', 'contact-success');
+  attachInPageSuccess('form[name="trip-inquiry"]', '.form-card',         'plan-success');
 
 })();

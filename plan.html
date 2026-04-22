@@ -92,10 +92,13 @@
           <h3>Trip Planning Questionnaire</h3>
           <p class="subtitle">We're here to design a trip that's uniquely yours. Answer a few quick questions and we'll be in touch to start building your adventure.</p>
 
-          <div class="form-success" id="plan-success" style="display:none; background:#d4edda; border:1px solid #c3e6cb; border-radius:10px; padding:24px 28px; text-align:center; color:#155724; font-size:1rem; line-height:1.6; margin-bottom:24px;">
-            <div style="font-size:2rem; margin-bottom:10px;">✈️</div>
-            <strong>Questionnaire received!</strong><br>
-            Thanks so much — we'll be in touch within 1–2 business days to start planning your adventure.
+          <div class="form-thankyou" id="plan-success" style="display:none;">
+            <div class="form-thankyou__icon">🌿</div>
+            <span class="section-label" style="text-align:center;">Message Received</span>
+            <h2 class="form-thankyou__heading">You're One Step Closer to<br>Your Next Adventure</h2>
+            <div class="divider centered"></div>
+            <p class="form-thankyou__body">We got your message and we'll be in touch within 24 hours. Start dreaming — something amazing is coming.</p>
+            <a href="destinations.html" class="btn btn-primary form-thankyou__cta">Explore Destinations</a>
           </div>
 
           <form
@@ -103,7 +106,6 @@
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/success"
           >
             <input type="hidden" name="form-name" value="trip-inquiry" />
             <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
